@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Security.Principal;
 using YouTrackSharp.Issues;
 using YT.Stats.Extensions;
 using YT.Stats.YT.Issue;
@@ -106,12 +104,12 @@ namespace YT.Stats
 				var leftPrice = Salary.Salary - totalPrice;
 				var leftSpentTime = Salary.NeedWorkHours - totalSpentTime;
 				table.AddFooter($"Необходимо отработать за месяц: {Salary.NeedWorkHours} часов", ConsoleColor.DarkCyan);
-				table.AddFooter($"Отработано по времени: {totalSpentTime} часов", ConsoleColor.DarkCyan);
+				table.AddFooter($"Отработано по времени: {decimal.Round(totalSpentTime, 1)} часов", ConsoleColor.DarkCyan);
 				table.AddFooter($"Заработано на текущий момент: {totalPrice}р", ConsoleColor.DarkCyan);
 				table.AddFooter($"Прогресс: {progress}%", ConsoleColor.DarkCyan);
 				table.AddFooter($"Прогресс отставания: {leftProgress}%", ConsoleColor.DarkRed);
 				table.AddFooter($"Осталось заработать: {leftPrice}р", ConsoleColor.DarkRed);
-				table.AddFooter($"Осталось отработать: {leftSpentTime} часов", ConsoleColor.DarkRed);
+				table.AddFooter($"Осталось отработать: {decimal.Round(leftSpentTime, 1)} часов", ConsoleColor.DarkRed);
 				
 				renderer.Render();
 				
