@@ -1,5 +1,6 @@
 # YT.Stats
 Lets you track your performance on [youtrack](https://www.jetbrains.com/ru-ru/youtrack/).
+The utility connects to your account and enters many indicators of their output to the terminal.
 
 ## How use?
 
